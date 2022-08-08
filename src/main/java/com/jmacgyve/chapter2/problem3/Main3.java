@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main3 {
     //Spring Core Module
     public static void main(String[] args) {
-        //Пример DI через XML
+        //Пример IoC через XML
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/app-context.xml");
         MessageRenderer mr1 = ctx.getBean("renderer", MessageRenderer.class);
         mr1.render();
