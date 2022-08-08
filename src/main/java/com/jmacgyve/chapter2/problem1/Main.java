@@ -4,7 +4,7 @@ import com.jmacgyve.chapter2.problem1.interfaces.MessageProvider;
 import com.jmacgyve.chapter2.problem1.interfaces.MessageRenderer;
 
 public class Main {
-    //Классический пример DI
+    //Классический пример Ioc
     public static void main(String[] args) {
         MessageRenderer messageRenderer = new StandardOurMessageRender();
         MessageProvider messageProvider = new HelloWorldMessageProvider();

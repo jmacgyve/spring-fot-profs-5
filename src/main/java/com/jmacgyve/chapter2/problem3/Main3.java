@@ -13,7 +13,7 @@ public class Main3 {
         MessageRenderer mr1 = ctx.getBean("renderer", MessageRenderer.class);
         mr1.render();
 
-        //Пример DI через Annotations
+        //Пример IoC через Annotations
         ApplicationContext atx = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
         MessageRenderer mr2 = atx.getBean("renderer", MessageRenderer.class);
         mr2.render();
