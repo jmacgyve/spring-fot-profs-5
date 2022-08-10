@@ -5,7 +5,16 @@ import com.jmacgyve.chapter3.searchingDependencies.CDL.interfaces.ManagedCompone
 
 //Зависимый объект осуществляет поиск - Идет в Контейнер
 public class ContextualizedDependencyLookup implements ManagedComponent {
+
     private Dependency dependency;
+
+    public ContextualizedDependencyLookup() {
+    }
+
+    public ContextualizedDependencyLookup(Dependency dependency) {
+        this.dependency = dependency;
+    }
+
     @Override
     public void performLookup(Container container) {
         this.dependency = (Dependency) container.getDependency("myDependency");
@@ -16,5 +25,9 @@ public class ContextualizedDependencyLookup implements ManagedComponent {
         return "ContextualizedDependencyLookup{" +
                 "dependency=" + dependency +
                 '}';
+    }
+
+    public void setDependency(Dependency dependency) {
+        this.dependency = dependency;
     }
 }
