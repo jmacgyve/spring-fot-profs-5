@@ -1,9 +1,10 @@
 package com.jmacgyve.chapter4.init;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-public class Singer implements InitializingBean {
+import javax.annotation.PostConstruct;
+
+public class SingerWithAnnotation {
     private final static String defaultName = "DEFAULT NAME";
     private String name;
     private int age = Integer.MIN_VALUE;
@@ -16,14 +17,6 @@ public class Singer implements InitializingBean {
         this.age = age;
     }
 
-    public void init() {
-        System.out.println("Инициализация бина");
-
-        if (name == null) name = defaultName;
-
-        if (age == Integer.MIN_VALUE) throw new IllegalArgumentException("Задайте значение age");
-    }
-
     @Override
     public String toString() {
         return "Singer{" +
@@ -32,9 +25,10 @@ public class Singer implements InitializingBean {
                 '}';
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("Инициализация бина через afterPropertiesSet");
+
+    @PostConstruct
+    public void init2() {
+        System.out.println("Инициализация бина с аннотацией PostConstruct");
 
         if (name == null) name = defaultName;
 
@@ -53,9 +47,9 @@ public class Singer implements InitializingBean {
         ctx.close();
     }
 
-    private static Singer getBean(String singer1, GenericXmlApplicationContext ctx) {
+    private static SingerWithAnnotation getBean(String singer1, GenericXmlApplicationContext ctx) {
         try {
-            Singer bean = (Singer) ctx.getBean(singer1);
+            SingerWithAnnotation bean = (SingerWithAnnotation) ctx.getBean(singer1);
             System.out.println(bean);
             return bean;
         } catch (Exception e) {

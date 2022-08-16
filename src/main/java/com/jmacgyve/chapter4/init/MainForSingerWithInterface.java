@@ -2,10 +2,11 @@ package com.jmacgyve.chapter4.init;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-public class Main {
+public class MainForSingerWithInterface {
+
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("spring/chapter4-app-context.xml");
+        ctx.load("spring/chapter4-app-context-annotation.xml");
         ctx.refresh();
 
         getBean("singer1", ctx);

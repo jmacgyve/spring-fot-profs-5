@@ -13,12 +13,12 @@
     <context:annotation-config/>
 
     <bean id="singer1"
-        class="com.jmacgyve.chapter4.init.Singer"
+        class="com.jmacgyve.chapter4.init.SingerWithAnnotation"
         p:name="Eugene Goldyrev" p:age="24"/>
     <bean id="singer2"
-            class="com.jmacgyve.chapter4.init.Singer"
+            class="com.jmacgyve.chapter4.init.SingerWithAnnotation"
             p:age="10"/>
     <bean id="singer3"
-            class="com.jmacgyve.chapter4.init.Singer"
+            class="com.jmacgyve.chapter4.init.SingerWithAnnotation"
             p:name="Just Name"/>
 </beans>
