@@ -1,6 +1,9 @@
 package com.jmacgyve.chapter4.init;
 
-public class Singer {
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class Singer implements InitializingBean {
     private final static String defaultName = "DEFAULT NAME";
     private String name;
     private int age = Integer.MIN_VALUE;
@@ -27,5 +30,14 @@ public class Singer {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Инициализация бина через afterPropertiesSet");
+
+        if (name == null) name = defaultName;
+
+        if (age == Integer.MIN_VALUE) throw new IllegalArgumentException("Задайте значение age");
     }
 }
