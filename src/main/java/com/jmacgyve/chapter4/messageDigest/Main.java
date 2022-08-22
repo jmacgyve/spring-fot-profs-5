@@ -14,6 +14,8 @@ public class Main {
 
 /**
 
+ afterPropertiesSet === SHA1
+ afterPropertiesSet === MD5
  digest1
  Использую алгоритм --- SHA1
  [B@2ddc9a9f
