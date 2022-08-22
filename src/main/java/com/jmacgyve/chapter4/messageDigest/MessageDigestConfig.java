@@ -7,15 +7,15 @@ import org.springframework.context.annotation.Configuration;
 public class MessageDigestConfig {
 
     @Bean
-    public MessageDigestFactoryBean defaultMode(){
-        return new MessageDigestFactoryBean();
-    }
-
-    @Bean
     public MessageDigestFactoryBean sha() {
         MessageDigestFactoryBean factorySha = new MessageDigestFactoryBean();
         factorySha.setAlgorithmName("SHA1");
         return factorySha;
+    }
+
+    @Bean
+    public MessageDigestFactoryBean defaultMode(){
+        return new MessageDigestFactoryBean();
     }
 
     @Bean

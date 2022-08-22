@@ -23,6 +23,7 @@ public class MessageDigestFactoryBean implements FactoryBean<MessageDigest>, Ini
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        System.out.println("afterPropertiesSet === " + algorithmName);
         messageDigest = MessageDigest.getInstance(algorithmName);
     }
 
