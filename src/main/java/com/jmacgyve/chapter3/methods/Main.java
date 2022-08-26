@@ -26,3 +26,6 @@ public class Main {
         System.out.println("Одинаковые инстансы бинов? " + (singer1 == singer2));
     }
 }
+
+// как внедрять прототип в синглтон
+// https://sysout.ru/kak-ispolzovat-annotatsiyu-lookup/
